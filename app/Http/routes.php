@@ -36,10 +36,18 @@ Route::get('tournament/listTournament', function () {
     return view('adminControls.listTournament');
 });
 
-Route::get('tournament/createTournament', function () {
-    return view('adminControls.createTournament');
-});
+Route::get('tournament/createTournament', [
+    'as' => 'create_tourament', 'uses' => 'TournamentController@getCreateTournament'
+]);
+
+// Route::get('tournament/createTournament', function () {
+//     return view('adminControls.createTournament');
+// });
 
 Route::get('tournament/setQuestion', function () {
     return view('adminControls.setQuestion');
+});
+
+Route::get('tournament/test', function () {
+    return view('test');
 });
