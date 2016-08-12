@@ -19,17 +19,18 @@
                         </thead>
                         </tbody>
                             <tr>
-                                <td>Jill</td>
-                                <td>Smith</td> 
-                                <td>50</td>
+                                <td>Keep Java Alive</td>
+                                <td>Tcheutchoua Steve</td> 
+                                <td>20</td>
                             </tr>
                             <tr>
-                                <td>Eve</td>
-                                <td>Jackson</td> 
-                                <td>94</td>
+                                <td>Mastering Moodle</td>
+                                <td>Nsiany Sandra</td> 
+                                <td>14</td>
                             </tr>
                         </tbody>
                     </table>
+                    <a href="{{$url=route('create_tourament')}}" class="btn btn-primary btn-md active" role="button">Create New Competition</a>
                 </div>
                 <div class="panel-footer">Competitons Available</div>
                 </div>

@@ -1,0 +1,35 @@
+<?php  $categories = new SimpleXMLElement($result);
+                                echo $categories->category[1]->cat_name;
+                                 ?>
+
+
+ <!-- <?php $p = xml_parser_create(); ?>
+                            <?php  xml_parse_into_struct($p, $result, $values, $index); ?>
+                            <?php xml_parser_free($p); ?>
+
+                                <?php echo "<BR> <BR>Values in webservice array";
+                                print "<pre><BR><BR>";
+                                print_r($values);
+                                print "</pre>"; ?>
+                            -->
+                                $categories = new SimpleXMLElement($result);
+                                echo $categories->QuestionsCategory[0]->category;
+
+
+                                <!-- 
+                                @foreach ($values as $cat)
+                                 @if((array_key_exists('value',$cat)) && (key($cat) > 0))
+                                <pre><BR><BR>
+                                   
+                                    <?php var_dump($cat["value"]) ;
+                                    echo "<br>";
+                                    ?>
+                                    {{sizeof($cat)}}
+                                </pre>
+                                @endif
+                                @endforeach
+                                -->
+
+							<span class="checkbox">
+						    	<input type="checkbox">
+						    </span>
