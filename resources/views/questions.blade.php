@@ -5,9 +5,10 @@
  * Date: 4/8/16
  * Time: 2:08 PM
  */
-require_once('./lib/nusoap.php');
+require_once('../lib/nusoap.php');
 
-$url = "http://www.diligentbilingual.org/resources/fyp/QuestionsServer.php?wsdl";
+#$url = "http://www.diligentbilingual.org/resources/fyp/QuestionsServer.php?wsdl";
+$url = "http://localhost/fyp/QuestionsServer.php?wsdl";
 $client = new nusoap_client($url, true);
 
 $error  = $client->getError();
