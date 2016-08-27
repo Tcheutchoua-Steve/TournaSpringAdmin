@@ -40,9 +40,16 @@ Route::get('tournament/createTournament', [
     'as' => 'create_tourament', 'uses' => 'TournamentController@getCreateTournament'
 ]);
 
+Route::get('tournament/setQuestion/{id}', [
+    'as' => 'getQuestionIDs', 'uses' => 'TournamentController@chooseQuestionInCategory'
+]);
+
 // Route::get('tournament/createTournament', function () {
 //     return view('adminControls.createTournament');
 // });
+
+Route::get('/tournament/setQuestion/{$category_id}', ['uses' =>'SomeController@doSomething']);
+
 
 Route::get('tournament/setQuestion', function () {
     return view('adminControls.setQuestion');

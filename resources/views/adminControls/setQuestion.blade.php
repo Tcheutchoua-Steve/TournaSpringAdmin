@@ -6,7 +6,7 @@ $url = "http://localhost/fyp/QuestionsServer.php?wsdl";
 $client = new nusoap_client($url, true);
 
 $error  = $client->getError();
-
+echo($data['categoryId']);
 if ($error) {
 echo "<h2>Constructor error</h2><pre>" . $error . "</pre>";
 
@@ -21,100 +21,36 @@ $categories = new SimpleXMLElement($result);?>
                 	<div class="panel-body">
                 		<div class="btn-group-vertical col-md-2" role="group" aria-label="true">
 
-                            <div class="radio" id="category">
+                            <div class="nav-pills" id="category">
                             @foreach($categories as $category)
-                                <label>
-                                    <input type="radio" name="cat" id="{{$category->cat_id}}" value="{{$category->cat_id}}" checked>
-                                    {{$category->cat_name}}
-                                </label>
+                                <li><a href="{{ url('/tournament/setQuestion/'.$category->cat_id)}}">{{$category->cat_name}}
+                                    {{--<input type="radio" name="cat" id="{{$category->cat_id}}" value="{{$category->cat_id}}" checked/>--}}
+                                    </a></li>
+                                
                             @endforeach
                             </div>
+                        <?php 
+                        
+                        $params = array(
+                            "category" => $data['categoryId']
+                                ); 
+                                $questions = $client->call('getQuestions',$params);
+                                $Questions = new SimpleXMLElement($questions);
 
-
+                                //var_dump($categories);
+                                ?>
 						</div>
+                            {{--Handling getting of questions from individual categories--}}
+
+
 						<div class="col-md-9" id="questionsInCategory">
-							<!-- Set of Questions. -->
+                            <!-- Set of Questions. -->
+                            @foreach($Questions as $question)
 							<span class="checkbox">
                                 <input type="checkbox">
-                                <p>What is the administrative Capital of Cameroon ? </p>
+                                <p>{{$question->question}} </p>
                             </span>
-                            <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>Who is the minister of Territorial Adminstration  ? </p>
-                            </span>
-                            <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>How many Divisions are there in Cameroon ? </p>
-                            </span>
-                            <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>Which town is the most populated in Cameroon ? </p>
-                            </span>
-                            <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>By how many countries is Cameroon Bounded ? </p>
-                            </span>
-                            <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>What is the highest mountan in Cameroon  ? </p>
-                            </span>
-                            <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>Where is maroua Found  ? </p>
-                            </span>
-                            <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>How many Official languages are there in Cameroon  ? </p>
-                            </span>
-                            <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>How many editions does the Java programming language have ? </p>
-                            </span>
-                            <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>How many editions does the Java programming language have ? </p>
-                            </span>
-                            <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>How many editions does the Java programming language have ? </p>
-                            </span>
-                            <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>How many editions does the Java programming language have ? </p>
-                            </span>
-                            <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>How many editions does the Java programming language have ? </p>
-                            </span>
-                            <hr style="width: 100%; color: black; height: 1px; background-color:black;" />  
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>How many editions does the Java programming language have ? </p>
-                            </span>
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>How many editions does the Java programming language have ? </p>
-                            </span>
-                            <span class="checkbox">
-                                <input type="checkbox">
-                                <p>How many editions does the Java programming language have ? </p>
-                            </span>
-                            <span class="checkbox">
-						    	<input type="checkbox">
-                                <p>How many editions does the Java programming language have ? </p>
-						    </span>
+                            @endforeach
 						</div>
                 	</div>
                 </div>
