@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
+    	<a href="{{url('tournament/setTournament')}}" >
     	<div class="col-md-4 col-md-offset-1">
 
             <div class="panel panel-primary">
@@ -29,10 +30,12 @@
 					</ul>
                 </div>
             </div>
+        
         </div>
-    
+    	</a>
+    	<a href="{{url('tournament/setTournament')}}" >
     	<div class="col-md-4 col-md-offset-1">
-
+    		
 	        <div class="panel panel-primary">
 	                <div class="panel-heading">Standard 4 Players</div>
 	                <div class="panel-body">
@@ -68,12 +71,15 @@
 	                </div>
 	            
 	        </div>
+	    
 	    </div>
+	    </a>
     </div>
 
     <br>
     <!-- Second Set of multiple tournaments -->
       <div class="row">
+      	<a href="{{url('tournament/setTournament')}}" >
     	<div class="col-md-4 col-md-offset-1">
 
             <div class="panel panel-primary">
@@ -133,7 +139,8 @@
                 </div>
             </div>
         </div>
-    
+    	</a>
+    	<a href="{{url('tournament/setTournament')}}" >
     	<div class="col-md-4 col-md-offset-1">
 
 	        <div class="panel panel-primary">
@@ -235,6 +242,7 @@
 	            
 	        </div>
 	    </div>
+	</a>
     </div>
 </div>
 @endsection
