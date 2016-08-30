@@ -59,7 +59,8 @@ $categories = new SimpleXMLElement($result);?>
                             @endforeach
 						</div>
                         <div class="col-md-6 col-md-offset-5">
-                        <a href="{{url('home')}}" class="btn btn-primary btn-md active" role="button">Save and Complete Tournament</a>
+                        {{--<a href="{{url('home')}}" class="btn btn-primary btn-md active" role="button">Save Questions</a>--}}
+                        <a href="" class="btn btn-primary btn-md active" role="button">Save Questions</a>
                     </div>
 
                 	</div>

@@ -14,24 +14,28 @@
                             <tr>
                                 <th>Competition Name</th>
                                 <th>Admin</th>
-                                <th>Connected Users</th>
+                                <th>Maximum Users</th>
                             </tr>
                         </thead>
                         </tbody>
                             <tr>
                                 <td>Keep Java Alive</td>
                                 <td>Tcheutchoua Steve</td> 
-                                <td>20</td>
+                                <td>8</td>
                             </tr>
                             <tr>
                                 <td>Mastering Moodle</td>
                                 <td>Nsiany Sandra</td> 
-                                <td>14</td>
+                                <td>4</td>
                             </tr>
                         </tbody>
                     </table>
-                    <a href="{{$url=route('create_tourament')}}" class="btn btn-primary btn-md active" role="button">Create New Competition</a>
+                    <br>
+                    <div class="col-md-offset-4">
+                        <a href="{{$url=route('create_tourament')}}" class="btn btn-primary btn-md active" role="button">Create New Competition</a>
+                    </div>
                 </div>
+                <br>
                 <div class="panel-footer">Competitons Available</div>
                 </div>
             </div>
